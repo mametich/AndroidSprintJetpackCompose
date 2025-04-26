@@ -55,4 +55,5 @@ fun AndroidSprintJetpackComposeTheme(
         typography = recipesAppTypography,
         content = content
     )
+
 }
