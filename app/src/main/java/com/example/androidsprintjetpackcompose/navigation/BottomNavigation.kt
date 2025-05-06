@@ -23,7 +23,7 @@ fun RecipesBottomNavigation(
                     Icon(
                         imageVector = item.icon,
                         contentDescription = item.title,
-                        )
+                    )
                 },
                 label = { Text(text = item.title) },
                 alwaysShowLabel = true
