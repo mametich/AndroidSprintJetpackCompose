@@ -16,9 +16,10 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.androidsprintjetpackcompose.navigation.BottomNavItem
-import com.example.androidsprintjetpackcompose.navigation.RecipesBottomNavigation
+import com.example.androidsprintjetpackcompose.navigation.BottomNavigation
 import com.example.androidsprintjetpackcompose.ui.theme.AndroidSprintJetpackComposeTheme
 
 @Composable
@@ -30,11 +31,9 @@ fun RecipesApp(modifier: Modifier = Modifier) {
         Scaffold(
             modifier = Modifier.fillMaxSize(),
             bottomBar = {
-                RecipesBottomNavigation(
-                    currentNavItem = currentNavItem,
-                    onNavItemClick = { newItem ->
-                        currentNavItem = newItem
-                    }
+                BottomNavigation(
+                   onFavouritesClick = {},
+                   onCategoriesClick = {}
                 )
             }
         ) { innerPadding ->
@@ -57,7 +56,8 @@ fun CategoriesScreen(paddingValues: PaddingValues) {
         contentAlignment = Alignment.Center
     ) {
         Text(
-            text = "Категории"
+            text = stringResource(R.string.category),
+            style = MaterialTheme.typography.bodyMedium
         )
     }
 }
@@ -71,7 +71,8 @@ fun RecipesScreen(paddingValues: PaddingValues) {
         contentAlignment = Alignment.Center
     ) {
         Text(
-            text = "Рецепты"
+            text = stringResource(R.string.recipes),
+            style = MaterialTheme.typography.bodyMedium
         )
     }
 }
@@ -85,7 +86,8 @@ fun FavouritesScreen(paddingValues: PaddingValues) {
         contentAlignment = Alignment.Center
     ) {
         Text(
-            text = "Избранное"
+            text = stringResource(R.string.favourites),
+            style = MaterialTheme.typography.bodyMedium
         )
     }
 }
