@@ -1,14 +1,11 @@
-package com.example.androidsprintjetpackcompose.navigation
+package com.example.androidsprintjetpackcompose.ui.navigation
 
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.FavoriteBorder
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Icon
@@ -23,7 +20,6 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.androidsprintjetpackcompose.R
-import com.example.androidsprintjetpackcompose.ui.theme.TextSecondaryColorDark
 
 @Composable
 fun BottomNavigation(
@@ -38,9 +34,9 @@ fun BottomNavigation(
             onClick = onCategoriesClick,
             modifier = Modifier
                 .weight(1f),
-            shape = RoundedCornerShape(8.dp),
+            shape = MaterialTheme.shapes.medium,
             colors = ButtonDefaults.buttonColors(
-                containerColor = Color(0xFF525DC0)
+                containerColor = MaterialTheme.colorScheme.tertiary,
             )
         ) {
             Text(
@@ -53,9 +49,9 @@ fun BottomNavigation(
             onClick = onFavouritesClick,
             modifier = Modifier
                 .weight(1f),
-            shape = RoundedCornerShape(8.dp),
+            shape = MaterialTheme.shapes.medium,
             colors = ButtonDefaults.buttonColors(
-                containerColor = Color(0xFFE13E3E)
+                containerColor = MaterialTheme.colorScheme.error
             )
         ) {
             Row(
