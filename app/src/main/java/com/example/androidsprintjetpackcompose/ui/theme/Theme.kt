@@ -10,6 +10,7 @@ import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext
 
+
 private val RecipesAppLightColorScheme = lightColorScheme(
     primary = PrimaryColor,
     onPrimary = BackgroundColor,
@@ -40,6 +41,7 @@ private val RecipesAppDarkColorScheme = darkColorScheme(
     onSurfaceVariant = TextSecondaryColorDark
 )
 
+
 @Composable
 fun AndroidSprintJetpackComposeTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
@@ -48,10 +50,10 @@ fun AndroidSprintJetpackComposeTheme(
     content: @Composable () -> Unit
 ) {
     val colorScheme = when {
-        dynamicColor && Build.VERSION.SDK_INT >= Build.VERSION_CODES.S -> {
-            val context = LocalContext.current
-            if (darkTheme) dynamicDarkColorScheme(context) else dynamicLightColorScheme(context)
-        }
+//        dynamicColor && Build.VERSION.SDK_INT >= Build.VERSION_CODES.S -> {
+//            val context = LocalContext.current
+//            if (darkTheme) dynamicDarkColorScheme(context) else dynamicLightColorScheme(context)
+//        }
 
         darkTheme -> RecipesAppDarkColorScheme
         else -> RecipesAppLightColorScheme

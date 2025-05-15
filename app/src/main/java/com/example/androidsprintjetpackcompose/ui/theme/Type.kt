@@ -22,29 +22,24 @@ val recipesAppTypography = Typography(
         fontWeight = FontWeight.SemiBold,
         fontSize = 20.sp
     ),
-    bodyMedium = TextStyle(
+    titleMedium = TextStyle(
         fontFamily = MontserratAlternates,
         fontWeight = FontWeight.SemiBold,
+        fontSize = 16.sp
+    ),
+    bodyMedium = TextStyle(
+        fontFamily = Montserrat,
+        fontWeight = FontWeight.Medium,
         fontSize = 14.sp
     ),
     bodySmall = TextStyle(
-        fontFamily = MontserratAlternates,
+        fontFamily = Montserrat,
         fontWeight = FontWeight.Medium,
         fontSize = 12.sp
     ),
     labelLarge = TextStyle(
-        fontFamily = MontserratAlternates,
-        fontWeight = FontWeight.Normal,
+        fontFamily = Montserrat,
+        fontWeight = FontWeight.Medium,
         fontSize = 16.sp,
-    ),
-    labelMedium = TextStyle(
-        fontFamily = MontserratAlternates,
-        fontWeight = FontWeight.Normal,
-        fontSize = 14.sp
-    ),
-    labelSmall = TextStyle(
-        fontFamily = MontserratAlternates,
-        fontWeight = FontWeight.Light,
-        fontSize = 12.sp
     )
 )
