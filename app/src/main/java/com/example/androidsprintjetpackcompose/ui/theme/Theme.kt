@@ -9,6 +9,7 @@ import androidx.compose.material3.dynamicLightColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.unit.dp
 
 
 private val RecipesAppLightColorScheme = lightColorScheme(
@@ -40,6 +41,14 @@ private val RecipesAppDarkColorScheme = darkColorScheme(
     surfaceVariant = SurfaceVariantColor,
     onSurfaceVariant = TextSecondaryColorDark
 )
+
+object Dimens {
+    val paddingSmall = 4.dp
+    val paddingMedium = 8.dp
+    val paddingMediumBeforeLarge = 10.dp
+    val paddingLarge = 16.dp
+    val paddingExtraLarge = 24.dp
+}
 
 
 @Composable

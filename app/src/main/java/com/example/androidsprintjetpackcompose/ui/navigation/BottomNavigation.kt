@@ -43,7 +43,7 @@ fun BottomNavigation(
             )
         ) {
             Text(
-                text = stringResource(R.string.category).uppercase(),
+                text = stringResource(R.string.title_category).uppercase(),
                 style = MaterialTheme.typography.labelLarge,
             )
         }
@@ -61,13 +61,13 @@ fun BottomNavigation(
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 Text(
-                    text = stringResource(R.string.favourites).uppercase(),
+                    text = stringResource(R.string.title_favourites).uppercase(),
                     style = MaterialTheme.typography.labelLarge
                 )
                 Spacer(modifier = Modifier.width(10.dp))
                 Icon(
                     painter = painterResource(R.drawable.ic_heart_empty),
-                    contentDescription = stringResource(R.string.favourites)
+                    contentDescription = stringResource(R.string.title_favourites)
                 )
             }
         }
