@@ -1,6 +1,7 @@
 package com.example.androidsprintjetpackcompose
 
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
@@ -16,6 +17,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.androidsprintjetpackcompose.ui.categories.ScreenHeader
 import com.example.androidsprintjetpackcompose.ui.navigation.BottomNavigation
 import com.example.androidsprintjetpackcompose.ui.navigation.ScreenId
 import com.example.androidsprintjetpackcompose.ui.theme.AndroidSprintJetpackComposeTheme
@@ -38,7 +40,6 @@ fun RecipesApp(modifier: Modifier = Modifier) {
             when (currentNavItem) {
                 ScreenId.CATEGORIES -> CategoriesScreen(innerPadding)
                 ScreenId.FAVOURITES -> FavouritesScreen(innerPadding)
-
             }
         }
     }
@@ -46,6 +47,7 @@ fun RecipesApp(modifier: Modifier = Modifier) {
 
 @Composable
 fun CategoriesScreen(paddingValues: PaddingValues) {
+    ScreenHeader()
     Box(
         modifier = Modifier
             .fillMaxSize()
@@ -53,7 +55,7 @@ fun CategoriesScreen(paddingValues: PaddingValues) {
         contentAlignment = Alignment.Center
     ) {
         Text(
-            text = stringResource(R.string.category),
+            text = stringResource(R.string.title_category),
             style = MaterialTheme.typography.bodyMedium
         )
     }
@@ -68,7 +70,7 @@ fun FavouritesScreen(paddingValues: PaddingValues) {
         contentAlignment = Alignment.Center
     ) {
         Text(
-            text = stringResource(R.string.favourites),
+            text = stringResource(R.string.title_favourites),
             style = MaterialTheme.typography.bodyMedium
         )
     }
