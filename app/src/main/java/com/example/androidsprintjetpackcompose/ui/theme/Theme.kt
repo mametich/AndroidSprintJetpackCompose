@@ -42,15 +42,6 @@ private val RecipesAppDarkColorScheme = darkColorScheme(
     onSurfaceVariant = TextSecondaryColorDark
 )
 
-object Dimens {
-    val paddingSmall = 4.dp
-    val paddingMedium = 8.dp
-    val paddingMediumBeforeLarge = 10.dp
-    val paddingLarge = 16.dp
-    val paddingExtraLarge = 24.dp
-}
-
-
 @Composable
 fun AndroidSprintJetpackComposeTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),

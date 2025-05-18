@@ -40,6 +40,7 @@ val recipesAppTypography = Typography(
     labelLarge = TextStyle(
         fontFamily = Montserrat,
         fontWeight = FontWeight.Medium,
+        lineHeight = 16.sp,
         fontSize = 16.sp,
     )
 )
