@@ -31,7 +31,10 @@ fun RecipesApp(modifier: Modifier = Modifier) {
             }
         ) { innerPadding ->
             when (currentNavItem) {
-                ScreenId.CATEGORIES -> CategoriesScreen(innerPadding)
+                ScreenId.CATEGORIES -> CategoriesScreen(
+                    innerPadding,
+                    onCategoryClick = { }
+                )
                 ScreenId.FAVOURITES -> FavoritesScreen(innerPadding)
             }
         }
