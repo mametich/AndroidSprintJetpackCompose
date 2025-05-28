@@ -8,18 +8,8 @@ object RecipesRepositoryStub {
 
     val categories = listOf(
         CategoryDto(0, "Бургеры", "Рецепты всех популярных видов бургеров", "burger.png"),
-        CategoryDto(
-            1,
-            "Десерты",
-            "Самые вкусные рецепты десертов специально для вас",
-            "dessert.png"
-        ),
-        CategoryDto(
-            2,
-            "Пицца",
-            "Пицца на любой вкус и цвет. Лучшая подборка для тебя",
-            "pizza.png"
-        ),
+        CategoryDto(1, "Десерты", "Самые вкусные рецепты десертов специально для вас", "dessert.png"),
+        CategoryDto(2, "Пицца", "Пицца на любой вкус и цвет. Лучшая подборка для тебя", "pizza.png"),
         CategoryDto(3, "Рыба", "Печеная, жареная, сушеная, любая рыба на твой вкус", "fish.png"),
         CategoryDto(4, "Супы", "От классики до экзотики: мир в одной тарелке", "soup.png"),
         CategoryDto(5, "Салаты", "Хрустящий калейдоскоп под соусом вдохновения", "salad.png"),
@@ -51,10 +41,10 @@ object RecipesRepositoryStub {
         )
     )
 
-    fun getCategories() : List<CategoryDto> = categories
+    fun getCategories(): List<CategoryDto> = categories
 
-    fun getRecipes(categoryId: Int) : List<RecipeDto> {
-        return if(categoryId == 0) recipes else emptyList()
+    fun getRecipes(categoryId: Int): List<RecipeDto> {
+        return if (categoryId == 0) recipes else emptyList()
     }
 
 }
