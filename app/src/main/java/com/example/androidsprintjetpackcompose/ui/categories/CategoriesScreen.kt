@@ -57,8 +57,7 @@ fun CategoriesScreen(
         CategoryList(
             categories = RecipesRepositoryStub.getAllCategories().map { it.toUiModel() },
             onCategoryClick = onCategoryClick,
-
-            )
+        )
     }
 }
 
@@ -78,61 +77,6 @@ fun CategoryList(
             CategoryItem(
                 category = category,
                 onClick = { onCategoryClick(category) }
-            )
-        }
-    }
-}
-
-
-@Composable
-fun CategoryItem(
-    category: CategoryUiModel,
-    modifier: Modifier = Modifier,
-    onClick: () -> Unit,
-) {
-    Card(
-        modifier = Modifier
-            .fillMaxWidth()
-            .padding(Dimens.paddingMedium)
-            .clickable(onClick = onClick),
-        elevation = CardDefaults.cardElevation(
-            defaultElevation = Dimens.paddingSmall
-        ),
-        shape = MaterialTheme.shapes.medium,
-        colors = CardDefaults.cardColors(
-            containerColor = MaterialTheme.colorScheme.surface,
-        )
-    ) {
-        Column(
-            verticalArrangement = Arrangement.spacedBy(Dimens.paddingMedium)
-        ) {
-            AsyncImage(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .height(Dimens.paddingImageLarge),
-                model = ImageRequest.Builder(LocalContext.current)
-                    .data(category.imageUrl)
-                    .crossfade(true)
-                    .build(),
-                contentDescription = category.title,
-                contentScale = ContentScale.Crop
-            )
-            Text(
-                modifier = Modifier.padding(
-                    start = Dimens.paddingMedium,
-                ),
-                text = category.title.uppercase(),
-                style = MaterialTheme.typography.bodyMedium,
-            )
-            Text(
-                modifier = Modifier.padding(
-                    start = Dimens.paddingMedium,
-                    bottom = Dimens.paddingMedium,
-                    end = Dimens.paddingMedium
-                ),
-                text = category.description,
-                style = MaterialTheme.typography.bodySmall,
-                maxLines = 3,
             )
         }
     }
