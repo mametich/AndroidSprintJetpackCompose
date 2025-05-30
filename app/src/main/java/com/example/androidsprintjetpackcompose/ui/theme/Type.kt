@@ -19,7 +19,7 @@ val Typography = Typography(
 val recipesAppTypography = Typography(
     displayLarge = TextStyle(
         fontFamily = MontserratAlternates,
-        fontWeight = FontWeight.SemiBold,
+        fontWeight = FontWeight.ExtraBold,
         fontSize = 20.sp
     ),
     titleMedium = TextStyle(
