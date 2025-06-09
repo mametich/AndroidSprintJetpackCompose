@@ -4,4 +4,5 @@
     <string name="title_recipes">Рецепты</string>
     <string name="title_favourites">Избранное</string>
     <string name="text_without_recipes">Вы еще не добавили ни одного рецепта</string>
+    <string name="title_burgers">Бургеры</string>
 </resources>

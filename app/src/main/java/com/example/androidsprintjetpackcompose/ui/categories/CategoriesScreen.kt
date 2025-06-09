@@ -36,12 +36,13 @@ import com.example.androidsprintjetpackcompose.data.repository.RecipesRepository
 import com.example.androidsprintjetpackcompose.ui.components.ScreenHeader
 import com.example.androidsprintjetpackcompose.ui.model.CategoryUiModel
 import com.example.androidsprintjetpackcompose.ui.model.toUiModel
+import com.example.androidsprintjetpackcompose.ui.navigation.ScreenId
 import com.example.androidsprintjetpackcompose.ui.theme.Dimens
 
 @Composable
 fun CategoriesScreen(
     paddingValues: PaddingValues,
-    onCategoryClick: (CategoryUiModel) -> Unit,
+    onCategoryClick: (Int) -> Unit,
 ) {
     Column(
         modifier = Modifier
@@ -64,7 +65,7 @@ fun CategoriesScreen(
 @Composable
 fun CategoryList(
     categories: List<CategoryUiModel>,
-    onCategoryClick: (CategoryUiModel) -> Unit,
+    onCategoryClick: (Int) -> Unit,
     modifier: Modifier = Modifier
 ) {
     LazyVerticalGrid(
@@ -76,7 +77,7 @@ fun CategoryList(
         items(categories) { category ->
             CategoryItem(
                 category = category,
-                onClick = { onCategoryClick(category) }
+                onClick = { onCategoryClick(category.id) }
             )
         }
     }

@@ -1,4 +1,4 @@
-package com.example.androidsprintjetpackcompose.ui.categories
+package com.example.androidsprintjetpackcompose.ui.recipes
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -14,23 +14,25 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
 import coil3.request.ImageRequest
 import coil3.request.crossfade
-import com.example.androidsprintjetpackcompose.ui.model.CategoryUiModel
+import com.example.androidsprintjetpackcompose.data.repository.RecipesRepositoryStub
+import com.example.androidsprintjetpackcompose.ui.model.RecipeUiModel
 import com.example.androidsprintjetpackcompose.ui.theme.Dimens
 
 @Composable
-fun CategoryItem(
-    category: CategoryUiModel,
-    modifier: Modifier = Modifier,
+fun RecipeItem(
+    recipe: RecipeUiModel,
     onClick: (Int) -> Unit,
+    modifier: Modifier = Modifier
 ) {
     Card(
-        modifier = Modifier
+        modifier = modifier
             .fillMaxWidth()
-            .padding(Dimens.paddingMedium)
-            .clickable { onClick(category.id) },
+            .clickable { onClick(recipe.id) },
         elevation = CardDefaults.cardElevation(
             defaultElevation = Dimens.paddingSmall
         ),
@@ -40,37 +42,28 @@ fun CategoryItem(
         )
     ) {
         Column(
-            verticalArrangement = Arrangement.spacedBy(Dimens.paddingMedium)
+            verticalArrangement = Arrangement.SpaceBetween
         ) {
-
             AsyncImage(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .height(Dimens.paddingImageLarge),
+                    .height(Dimens.paddingForRecipeImage),
                 model = ImageRequest.Builder(LocalContext.current)
-                    .data(category.imageUrl)
+                    .data(recipe.imageUrl)
                     .crossfade(true)
                     .build(),
-                contentDescription = category.title,
+                contentDescription = recipe.title,
                 contentScale = ContentScale.Crop
             )
             Text(
-                modifier = Modifier.padding(
-                    start = Dimens.paddingMedium,
-                ),
-                text = category.title.uppercase(),
-                style = MaterialTheme.typography.bodyMedium,
-            )
-            Text(
-                modifier = Modifier.padding(
-                    start = Dimens.paddingMedium,
-                    bottom = Dimens.paddingMedium,
-                    end = Dimens.paddingMedium
-                ),
-                text = category.description,
-                style = MaterialTheme.typography.bodySmall,
-                maxLines = 3,
+                modifier = Modifier
+                    .padding(Dimens.paddingMedium),
+                text = recipe.title.uppercase(),
+                style = MaterialTheme.typography.titleMedium
             )
         }
     }
 }
+
+
+

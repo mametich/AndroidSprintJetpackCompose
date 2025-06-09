@@ -43,7 +43,7 @@ object RecipesRepositoryStub {
 
     fun getAllCategories(): List<CategoryDto> = categories
 
-    fun getRecipes(categoryId: Int): List<RecipeDto> {
+    fun getRecipesByCategoryId(categoryId: Int): List<RecipeDto> {
         return if (categoryId == 0) recipes else emptyList()
     }
 

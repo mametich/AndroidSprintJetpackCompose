@@ -10,4 +10,5 @@ object Dimens {
     val paddingExtraLarge = 24.dp
     val paddingExtraLargest = 202.dp
     val paddingImageLarge = 120.dp
+    val paddingForRecipeImage = 109.dp
 }
