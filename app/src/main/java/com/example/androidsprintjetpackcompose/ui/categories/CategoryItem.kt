@@ -42,7 +42,6 @@ fun CategoryItem(
         Column(
             verticalArrangement = Arrangement.spacedBy(Dimens.paddingMedium)
         ) {
-
             AsyncImage(
                 modifier = Modifier
                     .fillMaxWidth()
