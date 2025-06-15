@@ -6,4 +6,5 @@ sealed class Screen(val route: String) {
         fun createRoute(categoryId: Int) = "recipes/$categoryId"
     }
     object Favourites : Screen("favourites")
+    object RecipeDetails : Screen("recipe_details")
 }

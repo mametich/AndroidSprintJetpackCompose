@@ -28,6 +28,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import coil3.compose.AsyncImage
+import coil3.compose.rememberAsyncImagePainter
 import coil3.request.ImageRequest
 import coil3.request.crossfade
 import com.example.androidsprintjetpackcompose.Constants
@@ -52,7 +53,7 @@ fun CategoriesScreen(
     ) {
         ScreenHeader(
             title = stringResource(R.string.title_category),
-            imageRes = R.drawable.bcg_categories,
+            imageUrl = "file:///android_asset/bcg_categories.png",
             contentDescription = stringResource(R.string.title_category)
         )
         CategoryList(

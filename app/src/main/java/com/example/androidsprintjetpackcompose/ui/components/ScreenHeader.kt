@@ -18,6 +18,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import coil3.compose.rememberAsyncImagePainter
 import com.example.androidsprintjetpackcompose.R
 import com.example.androidsprintjetpackcompose.ui.theme.Dimens
 
@@ -43,7 +44,7 @@ import com.example.androidsprintjetpackcompose.ui.theme.Dimens
 fun ScreenHeader(
     title: String,
     contentDescription: String,
-    @DrawableRes imageRes: Int,
+    imageUrl: String,
     modifier: Modifier = Modifier
 ) {
     Box(
@@ -52,7 +53,7 @@ fun ScreenHeader(
             .height(Dimens.paddingImageScreenHeader)
     ) {
         Image(
-            painter = painterResource(id = imageRes),
+            painter = rememberAsyncImagePainter(model = imageUrl),
             contentDescription = contentDescription,
             contentScale = ContentScale.Crop,
             modifier = Modifier.fillMaxWidth()

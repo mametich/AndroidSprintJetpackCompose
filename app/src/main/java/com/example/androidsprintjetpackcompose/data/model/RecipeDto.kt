@@ -1,5 +1,6 @@
 package com.example.androidsprintjetpackcompose.data.model
 
+
 data class RecipeDto(
     val id: Int,
     val title: String,

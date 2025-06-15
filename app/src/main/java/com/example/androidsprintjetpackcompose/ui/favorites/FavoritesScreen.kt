@@ -30,7 +30,7 @@ fun FavoritesScreen(
     ) {
         ScreenHeader(
             title = stringResource(R.string.title_favourites),
-            imageRes = R.drawable.bcg_favorites,
+            imageUrl = "file:///android_asset/bcg_favorites.png",
             contentDescription = stringResource(R.string.title_favourites)
         )
         Spacer(modifier = Modifier.height(Dimens.paddingExtraLargest))
