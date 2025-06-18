@@ -16,9 +16,11 @@ import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.example.androidsprintjetpackcompose.ui.categories.CategoriesScreen
 import com.example.androidsprintjetpackcompose.ui.favorites.FavoritesScreen
+import com.example.androidsprintjetpackcompose.ui.model.RecipeUiModel
 import com.example.androidsprintjetpackcompose.ui.navigation.BottomNavigation
 import com.example.androidsprintjetpackcompose.ui.navigation.Screen
 import com.example.androidsprintjetpackcompose.ui.navigation.ScreenId
+import com.example.androidsprintjetpackcompose.ui.recipedetails.RecipesDetailScreen
 import com.example.androidsprintjetpackcompose.ui.recipes.RecipesScreen
 import com.example.androidsprintjetpackcompose.ui.theme.AndroidSprintJetpackComposeTheme
 
@@ -58,11 +60,23 @@ fun RecipesApp(modifier: Modifier = Modifier) {
                     RecipesScreen(
                         categoryId = categoryId,
                         paddingValues = innerPadding,
-                        onRecipeClick = { }
+                        onRecipeClick = { recipe ->
+                            navController.currentBackStackEntry?.savedStateHandle?.set("recipe", recipe)
+                            navController.navigate("recipe_details")
+                        }
                     )
                 }
                 composable(route = Screen.Favourites.route) {
                     FavoritesScreen(innerPadding)
+                }
+                composable(
+                    route = Screen.RecipeDetails.route,
+                ) {
+                    val recipe = navController.previousBackStackEntry?.savedStateHandle?.get<RecipeUiModel>("recipe")
+                    RecipesDetailScreen(
+                        recipeUiModel = recipe,
+                        paddingValues = innerPadding,
+                    )
                 }
             }
         }

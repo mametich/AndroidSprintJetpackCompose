@@ -3,6 +3,9 @@ package com.example.androidsprintjetpackcompose.data.repository
 import com.example.androidsprintjetpackcompose.data.model.CategoryDto
 import com.example.androidsprintjetpackcompose.data.model.IngredientDto
 import com.example.androidsprintjetpackcompose.data.model.RecipeDto
+import com.example.androidsprintjetpackcompose.ui.model.RecipeUiModel
+import com.example.androidsprintjetpackcompose.ui.model.toUiModel
+import kotlin.let
 
 object RecipesRepositoryStub {
 
@@ -241,6 +244,10 @@ object RecipesRepositoryStub {
 
     fun getRecipesByCategoryId(categoryId: Int): List<RecipeDto> {
         return if (categoryId == 0) burgerRecipes else emptyList()
+    }
+
+    fun getRecipeById(recipeId: Int): RecipeUiModel? {
+        return burgerRecipes.find { it.id == recipeId }?.toUiModel()
     }
 
 }

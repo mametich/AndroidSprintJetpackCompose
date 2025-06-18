@@ -31,7 +31,7 @@ fun RecipesScreen(
     categoryId: Int?,
     paddingValues: PaddingValues,
     modifier: Modifier = Modifier,
-    onRecipeClick: (Int) -> Unit
+    onRecipeClick: (RecipeUiModel) -> Unit
 ) {
 
     var recipes by remember { mutableStateOf<List<RecipeUiModel>>(emptyList()) }
@@ -50,7 +50,7 @@ fun RecipesScreen(
     ) {
         ScreenHeader(
             title = stringResource(R.string.title_burgers),
-            imageRes = R.drawable.burger,
+            imageUrl = "file:///android_asset/burger.png",
             contentDescription = stringResource(R.string.title_burgers),
         )
         LazyColumn(
@@ -60,7 +60,7 @@ fun RecipesScreen(
             items(recipes) { recipe ->
                 RecipeItem(
                     recipe = recipe,
-                    onClick = onRecipeClick
+                    onClick = { onRecipeClick(recipe) }
                 )
             }
         }
